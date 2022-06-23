@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  searx\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-05-15 18:46+0000\n"
-"PO-Revision-Date: 2022-04-22 07:18+0000\n"
+"POT-Creation-Date: 2022-06-05 21:15+0000\n"
+"PO-Revision-Date: 2022-06-03 07:18+0000\n"
 "Last-Translator: Markus Heiser <markus.heiser@darmarit.de>\n"
 "Language: sv\n"
 "Language-Team: Swedish "
@@ -195,13 +195,13 @@ msgid "No item found"
 msgstr "Inga artiklar hittade"
 
 #: searx/engines/qwant.py:212
-#: searx/templates/simple/result_templates/images.html:24 searx/webapp.py:399
+#: searx/templates/simple/result_templates/images.html:20 searx/webapp.py:399
 msgid "Source"
 msgstr "Källa"
 
 #: searx/webapp.py:401
 msgid "Error loading the next page"
-msgstr ""
+msgstr "Kunde inte ladda nästa sida"
 
 #: searx/webapp.py:544 searx/webapp.py:985
 msgid "Invalid settings, please edit your preferences"
@@ -390,7 +390,7 @@ msgid "Length"
 msgstr "Längd"
 
 #: searx/templates/simple/macros.html:37
-#: searx/templates/simple/result_templates/images.html:22
+#: searx/templates/simple/result_templates/images.html:18
 msgid "Author"
 msgstr "Upphovsman"
 
@@ -976,15 +976,15 @@ msgstr "göm media"
 msgid "This site did not provide any description."
 msgstr "Denna sida gav ingen beskrivning."
 
-#: searx/templates/simple/result_templates/images.html:23
+#: searx/templates/simple/result_templates/images.html:19
 msgid "Format"
 msgstr "Format"
 
-#: searx/templates/simple/result_templates/images.html:25
+#: searx/templates/simple/result_templates/images.html:21
 msgid "Engine"
 msgstr ""
 
-#: searx/templates/simple/result_templates/images.html:26
+#: searx/templates/simple/result_templates/images.html:22
 msgid "View source"
 msgstr "Visa källa"
 
@@ -1288,4 +1288,10 @@ msgstr "göm video"
 
 #~ msgid "Get image"
 #~ msgstr "Hämta bild"
+
+#~ msgid "Center Alignment"
+#~ msgstr ""
+
+#~ msgid "Displays results in the center of the page (Oscar layout)."
+#~ msgstr ""
 

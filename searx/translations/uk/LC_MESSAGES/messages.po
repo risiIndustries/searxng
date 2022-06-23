@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  searx\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-05-15 18:46+0000\n"
-"PO-Revision-Date: 2022-05-15 18:46+0000\n"
+"POT-Creation-Date: 2022-06-05 21:15+0000\n"
+"PO-Revision-Date: 2022-06-03 07:18+0000\n"
 "Last-Translator: Markus Heiser <markus.heiser@darmarit.de>\n"
 "Language: uk\n"
 "Language-Team: Ukrainian "
@@ -190,20 +190,20 @@ msgstr ""
 
 #: searx/webapp.py:187
 msgid "server API error"
-msgstr ""
+msgstr "Помилка API сервера"
 
 #: searx/webapp.py:397
 msgid "No item found"
-msgstr ""
+msgstr "Нічого не знайдено"
 
 #: searx/engines/qwant.py:212
-#: searx/templates/simple/result_templates/images.html:24 searx/webapp.py:399
+#: searx/templates/simple/result_templates/images.html:20 searx/webapp.py:399
 msgid "Source"
 msgstr ""
 
 #: searx/webapp.py:401
 msgid "Error loading the next page"
-msgstr ""
+msgstr "Не вдалося завантажити наступну сторінку"
 
 #: searx/webapp.py:544 searx/webapp.py:985
 msgid "Invalid settings, please edit your preferences"
@@ -393,7 +393,7 @@ msgid "Length"
 msgstr ""
 
 #: searx/templates/simple/macros.html:37
-#: searx/templates/simple/result_templates/images.html:22
+#: searx/templates/simple/result_templates/images.html:18
 msgid "Author"
 msgstr ""
 
@@ -975,21 +975,21 @@ msgstr "приховати медіа"
 msgid "This site did not provide any description."
 msgstr ""
 
-#: searx/templates/simple/result_templates/images.html:23
+#: searx/templates/simple/result_templates/images.html:19
 msgid "Format"
 msgstr ""
 
-#: searx/templates/simple/result_templates/images.html:25
+#: searx/templates/simple/result_templates/images.html:21
 msgid "Engine"
 msgstr ""
 
-#: searx/templates/simple/result_templates/images.html:26
+#: searx/templates/simple/result_templates/images.html:22
 msgid "View source"
 msgstr "Переглянути джерело"
 
 #: searx/templates/simple/result_templates/map.html:12
 msgid "address"
-msgstr ""
+msgstr "адреса"
 
 #: searx/templates/simple/result_templates/map.html:43
 msgid "show map"
@@ -1287,4 +1287,10 @@ msgstr "приховати відео"
 
 #~ msgid "Get image"
 #~ msgstr "Завантажити зображення"
+
+#~ msgid "Center Alignment"
+#~ msgstr ""
+
+#~ msgid "Displays results in the center of the page (Oscar layout)."
+#~ msgstr ""
 

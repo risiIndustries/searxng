@@ -208,11 +208,9 @@ class BooleanChoices:
         self.default_choices = dict(choices)
 
     def transform_form_items(self, items):
-        # pylint: disable=no-self-use
         return items
 
     def transform_values(self, values):
-        # pylint: disable=no-self-use
         return values
 
     def parse_cookie(self, data_disabled: str, data_enabled: str):
@@ -366,6 +364,16 @@ class Preferences:
                 settings['ui']['theme_args']['simple_style'],
                 locked=is_locked('simple_style'),
                 choices=['', 'auto', 'light', 'dark']
+            ),
+            'center_aligment': MapSetting(
+                settings['ui']['center_aligment'],
+                locked=is_locked('center_aligment'),
+                map={
+                    '0': False,
+                    '1': True,
+                    'False': False,
+                    'True': True
+                }
             ),
             'advanced_search': MapSetting(
                 settings['ui']['advanced_search'],

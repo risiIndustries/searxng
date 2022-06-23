@@ -40,11 +40,8 @@ from flask import (
     send_from_directory,
 )
 from flask.wrappers import Response
-from flask.ctx import has_request_context
 from flask.json import jsonify
 
-from babel.support import Translations
-import flask_babel
 from flask_babel import (
     Babel,
     gettext,
@@ -114,11 +111,16 @@ from searx.metrics import (
 )
 from searx.flaskfix import patch_application
 
-# renaming names from searx imports ...
+from searx.locales import (
+    LOCALE_NAMES,
+    RTL_LOCALES,
+    localeselector,
+    locales_initialize,
+)
 
+# renaming names from searx imports ...
 from searx.autocomplete import search_autocomplete, backends as autocomplete_backends
 from searx.languages import language_codes as languages
-from searx.locales import LOCALE_NAMES, RTL_LOCALES
 from searx.search import SearchWithPlugins, initialize as search_initialize
 from searx.network import stream as http_stream, set_context_network_name
 from searx.search.checker import get_result as checker_get_result
@@ -148,7 +150,6 @@ STATS_SORT_PARAMETERS = {
     'time': (False, 'total', 0),
     'reliability': (False, 'reliability', 100),
 }
-_INFO_PAGES = infopage.InfoPageSet()
 
 # Flask app
 app = Flask(__name__, static_folder=settings['ui']['static_path'], template_folder=templates_path)
@@ -192,10 +193,6 @@ exception_classname_to_text = {
 }
 
 
-# monkey patch for flask_babel.get_translations
-_flask_babel_get_translations = flask_babel.get_translations
-
-
 class ExtendedRequest(flask.Request):
     """This class is never initialized and only used for type checking."""
 
@@ -211,40 +208,9 @@ class ExtendedRequest(flask.Request):
 request = typing.cast(ExtendedRequest, flask.request)
 
 
-def _get_translations():
-    if has_request_context() and request.form.get('use-translation') == 'oc':
-        babel_ext = flask_babel.current_app.extensions['babel']
-        return Translations.load(next(babel_ext.translation_directories), 'oc')
-    if has_request_context() and request.form.get('use-translation') == 'szl':
-        babel_ext = flask_babel.current_app.extensions['babel']
-        return Translations.load(next(babel_ext.translation_directories), 'szl')
-    return _flask_babel_get_translations()
-
-
-flask_babel.get_translations = _get_translations
-
-
 @babel.localeselector
 def get_locale():
-    locale = 'en'
-
-    if has_request_context():
-        value = request.preferences.get_value('locale')
-        if value:
-            locale = value
-
-    if locale == 'oc':
-        request.form['use-translation'] = 'oc'
-        locale = 'fr_FR'
-    if locale == 'szl':
-        request.form['use-translation'] = 'szl'
-        locale = 'pl'
-    if locale == '':
-        # if there is an error loading the preferences
-        # the locale is going to be ''
-        locale = 'en'
-    # babel uses underscore instead of hyphen.
-    locale = locale.replace('-', '_')
+    locale = localeselector()
     logger.debug("%s uses locale `%s`", urllib.parse.quote(request.url), locale)
     return locale
 
@@ -564,12 +530,14 @@ def pre_request():
     if not preferences.get_value("language"):
         language = _get_browser_language(request, settings['search']['languages'])
         preferences.parse_dict({"language": language})
+        logger.debug('set language %s (from browser)', preferences.get_value("language"))
 
     # locale is defined neither in settings nor in preferences
     # use browser headers
     if not preferences.get_value("locale"):
         locale = _get_browser_language(request, LOCALE_NAMES.keys())
         preferences.parse_dict({"locale": locale})
+        logger.debug('set locale %s (from browser)', preferences.get_value("locale"))
 
     # request.user_plugins
     request.user_plugins = []  # pylint: disable=assigning-non-slot
@@ -941,7 +909,8 @@ def autocompleter():
         for result in raw_results:
             # attention: this loop will change raw_text_query object and this is
             # the reason why the sug_prefix was stored before (see above)
-            results.append(raw_text_query.changeQuery(result).getFullQuery())
+            if result != sug_prefix:
+                results.append(raw_text_query.changeQuery(result).getFullQuery())
 
     if len(raw_text_query.autocomplete_list) > 0:
         for autocomplete_text in raw_text_query.autocomplete_list:
@@ -1048,6 +1017,7 @@ def preferences():
             # even if there is no exception
             reliablity = 0
         else:
+            # pylint: disable=consider-using-generator
             reliablity = 100 - sum([error['percentage'] for error in errors if not error.get('secondary')])
 
         reliabilities[e.name] = {
@@ -1163,7 +1133,9 @@ def image_proxy():
                 return '', resp.status_code
             return '', 400
 
-        if not resp.headers.get('Content-Type', '').startswith('image/'):
+        if not resp.headers.get('Content-Type', '').startswith('image/') and not resp.headers.get(
+            'Content-Type', ''
+        ).startswith('binary/octet-stream'):
             logger.debug('image-proxy: wrong content-type: %s', resp.headers.get('Content-Type', ''))
             return '', 400
 
@@ -1383,6 +1355,7 @@ def config():
             'default_theme': settings['ui']['default_theme'],
             'version': VERSION_STRING,
             'brand': {
+                'PRIVACYPOLICY_URL': get_setting('general.privacypolicy_url'),
                 'CONTACT_URL': get_setting('general.contact_url'),
                 'GIT_URL': GIT_URL,
                 'GIT_BRANCH': GIT_BRANCH,
@@ -1412,6 +1385,8 @@ werkzeug_reloader = flask_run_development or (searx_debug and __name__ == "__mai
 
 # initialize the engines except on the first run of the werkzeug server.
 if not werkzeug_reloader or (werkzeug_reloader and os.environ.get("WERKZEUG_RUN_MAIN") == "true"):
+    locales_initialize()
+    _INFO_PAGES = infopage.InfoPageSet()
     plugin_initialize(app)
     search_initialize(enable_checker=True, check_network=True, enable_metrics=settings['general']['enable_metrics'])
 

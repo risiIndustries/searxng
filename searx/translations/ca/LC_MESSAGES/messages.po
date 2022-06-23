@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  searx\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-05-15 18:46+0000\n"
-"PO-Revision-Date: 2022-04-01 02:04+0000\n"
+"POT-Creation-Date: 2022-06-05 21:15+0000\n"
+"PO-Revision-Date: 2022-06-03 07:18+0000\n"
 "Last-Translator: Joan Montané <joan@montane.cat>\n"
 "Language: ca\n"
 "Language-Team: Catalan "
@@ -195,7 +195,7 @@ msgid "No item found"
 msgstr "No s'ha trobat cap element"
 
 #: searx/engines/qwant.py:212
-#: searx/templates/simple/result_templates/images.html:24 searx/webapp.py:399
+#: searx/templates/simple/result_templates/images.html:20 searx/webapp.py:399
 msgid "Source"
 msgstr "Origen"
 
@@ -393,7 +393,7 @@ msgid "Length"
 msgstr "Longitud"
 
 #: searx/templates/simple/macros.html:37
-#: searx/templates/simple/result_templates/images.html:22
+#: searx/templates/simple/result_templates/images.html:18
 msgid "Author"
 msgstr "Autor"
 
@@ -407,7 +407,7 @@ msgstr "en servidor intermediari"
 
 #: searx/templates/simple/new_issue.html:63
 msgid "Submit a new issue on Github including the above information"
-msgstr ""
+msgstr "Envieu un tiquet a Github que inclou la informació anterior"
 
 #: searx/templates/simple/preferences.html:29
 msgid "No HTTPS"
@@ -749,13 +749,15 @@ msgstr ""
 
 #: searx/templates/simple/preferences.html:409
 msgid "URL to restore your preferences in another browser"
-msgstr ""
+msgstr "URL per a recuperar les preferències en un altre navegador"
 
 #: searx/templates/simple/preferences.html:413
 msgid ""
 "Specifying custom settings in the preferences URL can be used to sync "
 "preferences across devices."
 msgstr ""
+"Indicar els paràmetres personalitzats en l'URL de preferències pot usar-"
+"se per a sincronitzar preferències entre aparells."
 
 #: searx/templates/simple/preferences.html:418
 msgid ""
@@ -986,15 +988,15 @@ msgstr "amaga el contingut multimèdia"
 msgid "This site did not provide any description."
 msgstr "Aquest lloc no proporciona cap descripció."
 
-#: searx/templates/simple/result_templates/images.html:23
+#: searx/templates/simple/result_templates/images.html:19
 msgid "Format"
 msgstr "Format"
 
-#: searx/templates/simple/result_templates/images.html:25
+#: searx/templates/simple/result_templates/images.html:21
 msgid "Engine"
 msgstr "Motor"
 
-#: searx/templates/simple/result_templates/images.html:26
+#: searx/templates/simple/result_templates/images.html:22
 msgid "View source"
 msgstr "Mostra el codi font"
 
@@ -1304,4 +1306,10 @@ msgstr "amaga el vídeo"
 
 #~ msgid "Get image"
 #~ msgstr "Obtén la imatge"
+
+#~ msgid "Center Alignment"
+#~ msgstr ""
+
+#~ msgid "Displays results in the center of the page (Oscar layout)."
+#~ msgstr ""
 
