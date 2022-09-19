@@ -1,11 +1,14 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 import logging
+import importlib
 
 logger = logging.getLogger('searx.shared')
 
+__all__ = ['SharedDict', 'schedule']
+
 try:
-    import uwsgi
+    uwsgi = importlib.import_module('uwsgi')
 except:
     # no uwsgi
     from .shared_simple import SimpleSharedDict as SharedDict, schedule
@@ -20,7 +23,7 @@ else:
         # uwsgi.ini configuration problem: disable all scheduling
         logger.error(
             'uwsgi.ini configuration error, add this line to your uwsgi.ini\n'
-            'cache2 = name=searxcache,items=2000,blocks=2000,blocksize=4096,bitmap=1'
+            'cache2 = name=searxngcache,items=2000,blocks=2000,blocksize=4096,bitmap=1'
         )
         from .shared_simple import SimpleSharedDict as SharedDict
 

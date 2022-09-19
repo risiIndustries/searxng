@@ -12,21 +12,21 @@
 # Noémi Ványi <sitbackandwait@gmail.com>, 2017
 # rike, 2014
 # Markus Heiser <markus.heiser@darmarit.de>, 2022.
+# Cedrik Boudreau <cedrik@arweave.org>, 2022.
 msgid ""
 msgstr ""
-"Project-Id-Version: searx\n"
+"Project-Id-Version:  searx\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-07-08 18:28+0000\n"
-"PO-Revision-Date: 2022-07-13 15:40+0000\n"
+"POT-Creation-Date: 2022-09-04 09:33+0000\n"
+"PO-Revision-Date: 2022-07-29 07:17+0000\n"
 "Last-Translator: Markus Heiser <markus.heiser@darmarit.de>\n"
-"Language-Team: French <https://weblate.bubu1.eu/projects/searxng/searxng/fr/>"
-"\n"
 "Language: fr\n"
+"Language-Team: French "
+"<https://weblate.bubu1.eu/projects/searxng/searxng/fr/>\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #. CONSTANT_NAMES['DEFAULT_GROUP_NAME']
@@ -201,7 +201,7 @@ msgstr "erreur API du serveur"
 msgid "No item found"
 msgstr "Pas d'élément trouvé"
 
-#: searx/engines/qwant.py:212
+#: searx/engines/qwant.py:217
 #: searx/templates/simple/result_templates/images.html:20 searx/webapp.py:365
 msgid "Source"
 msgstr "Source"
@@ -210,27 +210,27 @@ msgstr "Source"
 msgid "Error loading the next page"
 msgstr "Erreur lors du chargement de la page suivante"
 
-#: searx/webapp.py:516 searx/webapp.py:960
+#: searx/webapp.py:518 searx/webapp.py:962
 msgid "Invalid settings, please edit your preferences"
 msgstr "Paramètres non valides, veuillez éditer vos préférences"
 
-#: searx/webapp.py:532
+#: searx/webapp.py:534
 msgid "Invalid settings"
 msgstr "Paramètres non valides"
 
-#: searx/webapp.py:609 searx/webapp.py:685
+#: searx/webapp.py:611 searx/webapp.py:687
 msgid "search error"
 msgstr "erreur de recherche"
 
-#: searx/webapp.py:731
+#: searx/webapp.py:733
 msgid "{minutes} minute(s) ago"
 msgstr "il y a {minutes} minute(s)"
 
-#: searx/webapp.py:733
+#: searx/webapp.py:735
 msgid "{hours} hour(s), {minutes} minute(s) ago"
 msgstr "il y a {hours} heure(s), {minutes} minute(s)"
 
-#: searx/webapp.py:859
+#: searx/webapp.py:861
 msgid "Suspended"
 msgstr "Suspendu"
 
@@ -266,9 +266,32 @@ msgstr "Cet item a été remplacé par"
 msgid "No abstract is available for this publication."
 msgstr "Aucun résumé disponible pour cette publication."
 
-#: searx/engines/qwant.py:214
+#: searx/engines/qwant.py:219
 msgid "Channel"
 msgstr "Chaîne"
+
+#: searx/engines/tineye.py:40
+msgid ""
+"Could not read that image url. This may be due to an unsupported file "
+"format. TinEye only supports images that are JPEG, PNG, GIF, BMP, TIFF or"
+" WebP."
+msgstr ""
+"Impossible de lire l'url de l'image. Cela peut être dû à un format de "
+"fichier non pris en charge. TinEye ne prend en charge que les images au "
+"format JPEG, PNG, GIF, BMP, TIFF ou WebP."
+
+#: searx/engines/tineye.py:46
+msgid ""
+"The image is too simple to find matches. TinEye requires a basic level of"
+" visual detail to successfully identify matches."
+msgstr ""
+"L'image est trop simple pour trouver des correspondances. TinEye a besoin"
+" d'un niveau de détail visuel minimum pour réussir à identifier les "
+"correspondances."
+
+#: searx/engines/tineye.py:52
+msgid "The image could not be downloaded."
+msgstr "L'image n'a pas pu être téléchargée."
 
 #: searx/plugins/hash_plugin.py:24
 msgid "Converts strings to different hash digests."
@@ -321,6 +344,35 @@ msgid ""
 msgstr ""
 "Affiche votre adresse IP si la requête est \"ip\", et affiche votre user-"
 "agent si la requête contient \"user agent\"."
+
+#: searx/plugins/tor_check.py:25
+msgid "Tor check plugin"
+msgstr "Plugin de vérification de Tor"
+
+#: searx/plugins/tor_check.py:28
+msgid ""
+"This plugin checks if the address of the request is a TOR exit node, and "
+"informs the user if it is, like check.torproject.org but from searxng."
+msgstr ""
+"Ce plugin vérifie si l'adresse de la requête est un nœud de sortie TOR, "
+"et informe l'utilisateur si c'est le cas, comme check.torproject.org mais"
+" depuis searxng."
+
+#: searx/plugins/tor_check.py:62
+msgid ""
+"The TOR exit node list (https://check.torproject.org/exit-addresses) is "
+"unreachable."
+msgstr ""
+"La liste des nœuds de sortie TOR (https://check.torproject.org/exit-"
+"addresses) est inaccessible."
+
+#: searx/plugins/tor_check.py:78
+msgid "You are using TOR. Your IP address seems to be: {ip_address}."
+msgstr "Vous utilisez TOR. Votre adresse IP semble être : {ip_address}."
+
+#: searx/plugins/tor_check.py:84
+msgid "You are not using TOR. Your IP address seems to be: {ip_address}."
+msgstr "Vous n'utilisez pas TOR. Votre adresse ip semble être : {ip_address}."
 
 #: searx/plugins/tracker_url_remover.py:29
 msgid "Tracker URL remover"
@@ -430,17 +482,18 @@ msgstr "Soumettre un nouveau problème sur GitHub"
 #: searx/templates/simple/new_issue.html:66
 msgid "Please check for existing bugs about this engine on GitHub"
 msgstr ""
-"Merci de vérifier l’existence de bugs sur ce moteur de recherche sur GitHub"
+"Merci de vérifier l’existence de bugs sur ce moteur de recherche sur "
+"GitHub"
 
 #: searx/templates/simple/new_issue.html:69
 msgid "I confirm there is no existing bug about the issue I encounter"
-msgstr ""
-"Je confirme qu'il n'existe pas de bug pour le problème que j'ai rencontré"
+msgstr "Je confirme qu'il n'existe pas de bug pour le problème que j'ai rencontré"
 
 #: searx/templates/simple/new_issue.html:71
 msgid "If this is a public instance, please specify the URL in the bug report"
 msgstr ""
-"Si c'est une instance public, merci de spécifier l'URL dans le rapport de bug"
+"Si c'est une instance public, merci de spécifier l'URL dans le rapport de"
+" bug"
 
 #: searx/templates/simple/new_issue.html:72
 msgid "Submit a new issue on Github including the above information"
@@ -458,17 +511,17 @@ msgid "View error logs and submit a bug report"
 msgstr "Afficher les journaux d'erreurs et soumettre un rapport de bogue"
 
 #: searx/templates/simple/preferences.html:53
-#: searx/templates/simple/stats.html:67
+#: searx/templates/simple/stats.html:64
 msgid "Median"
 msgstr "Médiane"
 
 #: searx/templates/simple/preferences.html:54
-#: searx/templates/simple/stats.html:73
+#: searx/templates/simple/stats.html:70
 msgid "P80"
 msgstr "P80"
 
 #: searx/templates/simple/preferences.html:55
-#: searx/templates/simple/stats.html:79
+#: searx/templates/simple/stats.html:76
 msgid "P95"
 msgstr "P95"
 
@@ -907,67 +960,63 @@ msgstr "Score"
 msgid "Result count"
 msgstr "Nombre de résultats"
 
-#: searx/templates/simple/stats.html:38
-msgid "Scores per result"
-msgstr "Score par résultat"
-
-#: searx/templates/simple/stats.html:62
+#: searx/templates/simple/stats.html:59
 msgid "Total"
 msgstr "Total"
 
-#: searx/templates/simple/stats.html:63
+#: searx/templates/simple/stats.html:60
 msgid "HTTP"
 msgstr "HTTP"
 
-#: searx/templates/simple/stats.html:64
+#: searx/templates/simple/stats.html:61
 msgid "Processing"
 msgstr "Traitement"
 
-#: searx/templates/simple/stats.html:102
+#: searx/templates/simple/stats.html:99
 msgid "Warnings"
 msgstr "Attention"
 
-#: searx/templates/simple/stats.html:102
+#: searx/templates/simple/stats.html:99
 msgid "Errors and exceptions"
 msgstr "Erreurs et exceptions"
 
-#: searx/templates/simple/stats.html:108
+#: searx/templates/simple/stats.html:105
 msgid "Exception"
 msgstr "Exception"
 
-#: searx/templates/simple/stats.html:110
+#: searx/templates/simple/stats.html:107
 msgid "Message"
 msgstr "Message"
 
-#: searx/templates/simple/stats.html:112
+#: searx/templates/simple/stats.html:109
 msgid "Percentage"
 msgstr "Pourcentage"
 
-#: searx/templates/simple/stats.html:114
+#: searx/templates/simple/stats.html:111
 msgid "Parameter"
 msgstr "Paramètre"
 
-#: searx/templates/simple/stats.html:122
+#: searx/templates/simple/stats.html:119
 msgid "Filename"
 msgstr "Nom de fichier"
 
-#: searx/templates/simple/stats.html:123
+#: searx/templates/simple/stats.html:120
 msgid "Function"
 msgstr "Fonction"
 
-#: searx/templates/simple/stats.html:124
+#: searx/templates/simple/stats.html:121
 msgid "Code"
 msgstr "Code"
 
-#: searx/templates/simple/stats.html:131
+#: searx/templates/simple/stats.html:128
 msgid "Checker"
 msgstr "Checker"
 
-#: searx/templates/simple/stats.html:134
+#: searx/templates/simple/stats.html:131
 msgid "Failed test"
 msgstr "Test échoué"
 
-#: searx/templates/simple/stats.html:135
+#: searx/templates/simple/stats.html:132
 msgid "Comment(s)"
 msgstr "Commentaire(s)"
 
@@ -1360,3 +1409,7 @@ msgstr "cacher la vidéo"
 
 #~ msgid "preferences"
 #~ msgstr "préférences"
+
+#~ msgid "Scores per result"
+#~ msgstr "Score par résultat"
+

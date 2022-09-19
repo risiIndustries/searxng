@@ -44,6 +44,7 @@ ENGINE_DEFAULT_ARGS = {
     "enable_http": False,
     "using_tor_proxy": False,
     "display_error_messages": True,
+    "send_accept_language_header": False,
     "tokens": [],
     "about": {},
 }
@@ -80,6 +81,7 @@ engine_shortcuts = {}
 
     engine_shortcuts[engine.shortcut] = engine.name
 
+:meta hide-value:
 """
 
 

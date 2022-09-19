@@ -5,13 +5,14 @@
 # Translators:
 # Jiri Grönroos <jiri.gronroos@iki.fi>, 2017
 # Markus Heiser <markus.heiser@darmarit.de>, 2022.
+# Mico Hautaluoma <m@mha.fi>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version:  searx\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-07-08 18:28+0000\n"
-"PO-Revision-Date: 2022-07-06 00:21+0000\n"
-"Last-Translator: Markus Heiser <markus.heiser@darmarit.de>\n"
+"POT-Creation-Date: 2022-09-04 09:33+0000\n"
+"PO-Revision-Date: 2022-08-05 07:18+0000\n"
+"Last-Translator: Mico Hautaluoma <m@mha.fi>\n"
 "Language: fi\n"
 "Language-Team: Finnish "
 "<https://weblate.bubu1.eu/projects/searxng/searxng/fi/>\n"
@@ -193,7 +194,7 @@ msgstr "palvelimen API-virhe"
 msgid "No item found"
 msgstr "Tietuetta ei löytynyt"
 
-#: searx/engines/qwant.py:212
+#: searx/engines/qwant.py:217
 #: searx/templates/simple/result_templates/images.html:20 searx/webapp.py:365
 msgid "Source"
 msgstr "Lähde"
@@ -202,27 +203,27 @@ msgstr "Lähde"
 msgid "Error loading the next page"
 msgstr "Virhe ladattaessa seuraavaa sivua"
 
-#: searx/webapp.py:516 searx/webapp.py:960
+#: searx/webapp.py:518 searx/webapp.py:962
 msgid "Invalid settings, please edit your preferences"
 msgstr "Virheelliset asetukset, muokkaa siis asetuksia"
 
-#: searx/webapp.py:532
+#: searx/webapp.py:534
 msgid "Invalid settings"
 msgstr "Virheelliset asetukset"
 
-#: searx/webapp.py:609 searx/webapp.py:685
+#: searx/webapp.py:611 searx/webapp.py:687
 msgid "search error"
 msgstr "hakuvirhe"
 
-#: searx/webapp.py:731
+#: searx/webapp.py:733
 msgid "{minutes} minute(s) ago"
 msgstr "{minutes} minuutti(a) sitten"
 
-#: searx/webapp.py:733
+#: searx/webapp.py:735
 msgid "{hours} hour(s), {minutes} minute(s) ago"
 msgstr "{hours} tunti(a), {minutes} minuutti(a) sitten"
 
-#: searx/webapp.py:859
+#: searx/webapp.py:861
 msgid "Suspended"
 msgstr "Keskeytetty"
 
@@ -258,9 +259,31 @@ msgstr "Tämän kohdan on korvannut"
 msgid "No abstract is available for this publication."
 msgstr "Tästä julkaisusta ei ole yhteenvetoa."
 
-#: searx/engines/qwant.py:214
+#: searx/engines/qwant.py:219
 msgid "Channel"
 msgstr "Kanava"
+
+#: searx/engines/tineye.py:40
+msgid ""
+"Could not read that image url. This may be due to an unsupported file "
+"format. TinEye only supports images that are JPEG, PNG, GIF, BMP, TIFF or"
+" WebP."
+msgstr ""
+"Kuvan url-osoitetta ei voitu lukea. Tämä saattaa johtua tiedostomuodosta,"
+" jota ei tueta. TinEye tukee vain kuvia, jotka ovat JPEG, PNG, GIF, BMP, "
+"TIFF tai WebP."
+
+#: searx/engines/tineye.py:46
+msgid ""
+"The image is too simple to find matches. TinEye requires a basic level of"
+" visual detail to successfully identify matches."
+msgstr ""
+"Kuva on liian yksinkertainen löytääkseen osumia. TinEye vaatii "
+"visuaalisen tarkkuuden perustason, jotta osumien tunnistaminen onnistuu."
+
+#: searx/engines/tineye.py:52
+msgid "The image could not be downloaded."
+msgstr "Tätä kuvaa ei voida ladata."
 
 #: searx/plugins/hash_plugin.py:24
 msgid "Converts strings to different hash digests."
@@ -316,6 +339,35 @@ msgstr ""
 "Näyttää IP-osoitteesi jos hakuehtosi on \"ip\" ja selaimen tunnistetiedot"
 " jos hakuehtosi sisältää sanat \"user agent\"."
 
+#: searx/plugins/tor_check.py:25
+msgid "Tor check plugin"
+msgstr "Tor-verkon tarkistus lisäosa"
+
+#: searx/plugins/tor_check.py:28
+msgid ""
+"This plugin checks if the address of the request is a TOR exit node, and "
+"informs the user if it is, like check.torproject.org but from searxng."
+msgstr ""
+"Tämä lisäosa tarkistaa, tuleeko pyyntö TOR exit nodesta, ja ilmoittaa "
+"käyttäjälle, jos se on, samalla tavalla kuin check.torproject.org, mutta "
+"searxngista."
+
+#: searx/plugins/tor_check.py:62
+msgid ""
+"The TOR exit node list (https://check.torproject.org/exit-addresses) is "
+"unreachable."
+msgstr ""
+"TOR exit node listaan (https://check.torproject.org/exit-addresses) ei "
+"saada yhteyttä."
+
+#: searx/plugins/tor_check.py:78
+msgid "You are using TOR. Your IP address seems to be: {ip_address}."
+msgstr "Sinä käytät TOR:ia. Sinun IP-osoitteesi näyttää olevan: {ip_address}."
+
+#: searx/plugins/tor_check.py:84
+msgid "You are not using TOR. Your IP address seems to be: {ip_address}."
+msgstr "Sinä et käytä TOR:ia. Sinun IP-osoitteesi näyttää olevan: {ip_address}."
+
 #: searx/plugins/tracker_url_remover.py:29
 msgid "Tracker URL remover"
 msgstr "Seurantapalvelimen osoitteen poistaja"
@@ -351,11 +403,11 @@ msgstr "hakusivulle"
 
 #: searx/templates/simple/base.html:46
 msgid "About"
-msgstr ""
+msgstr "Tietoa SearXNG:stä"
 
 #: searx/templates/simple/base.html:50
 msgid "Donate"
-msgstr ""
+msgstr "Lahjoita"
 
 #: searx/templates/simple/base.html:54
 #: searx/templates/simple/preferences.html:99
@@ -389,7 +441,7 @@ msgstr "Julkiset palvelimet"
 
 #: searx/templates/simple/base.html:72
 msgid "Privacy policy"
-msgstr ""
+msgstr "Tietosuojakäytäntö"
 
 #: searx/templates/simple/base.html:75
 msgid "Contact instance maintainer"
@@ -418,19 +470,21 @@ msgstr "välityspalvelimella"
 
 #: searx/templates/simple/new_issue.html:64
 msgid "Start submiting a new issue on GitHub"
-msgstr ""
+msgstr "Avaa uusi issue GitHubissa"
 
 #: searx/templates/simple/new_issue.html:66
 msgid "Please check for existing bugs about this engine on GitHub"
-msgstr ""
+msgstr "Tarkista tämän hakukoneen tämänhetkiset ongelmat GitHubista"
 
 #: searx/templates/simple/new_issue.html:69
 msgid "I confirm there is no existing bug about the issue I encounter"
-msgstr ""
+msgstr "Vahvistan, että tästä bugista ei ole olemassaolevaa issue:ta"
 
 #: searx/templates/simple/new_issue.html:71
 msgid "If this is a public instance, please specify the URL in the bug report"
 msgstr ""
+"Jos kyseessä on julkinen instanssi, määritä sen URL-osoite "
+"vikailmoituksessa"
 
 #: searx/templates/simple/new_issue.html:72
 msgid "Submit a new issue on Github including the above information"
@@ -448,17 +502,17 @@ msgid "View error logs and submit a bug report"
 msgstr "Katso virhelokit ja lähetä virhe raportti"
 
 #: searx/templates/simple/preferences.html:53
-#: searx/templates/simple/stats.html:67
+#: searx/templates/simple/stats.html:64
 msgid "Median"
 msgstr "Mediaani"
 
 #: searx/templates/simple/preferences.html:54
-#: searx/templates/simple/stats.html:73
+#: searx/templates/simple/stats.html:70
 msgid "P80"
 msgstr "P80"
 
 #: searx/templates/simple/preferences.html:55
-#: searx/templates/simple/stats.html:79
+#: searx/templates/simple/stats.html:76
 msgid "P95"
 msgstr "P95"
 
@@ -578,7 +632,7 @@ msgstr "Valitse auto seurataksesi selaimesi asetuksia"
 
 #: searx/templates/simple/preferences.html:217
 msgid "Center Alignment"
-msgstr ""
+msgstr "Keskipisteen kohdistus"
 
 #: searx/templates/simple/preferences.html:220
 #: searx/templates/simple/preferences.html:232
@@ -594,7 +648,7 @@ msgstr "Pois"
 
 #: searx/templates/simple/preferences.html:224
 msgid "Displays results in the center of the page (Oscar layout)."
-msgstr ""
+msgstr "Näyttää tulokset sivun keskellä (Oscar-asettelu)."
 
 #: searx/templates/simple/preferences.html:229
 msgid "Results on new tabs"
@@ -780,13 +834,15 @@ msgstr ""
 
 #: searx/templates/simple/preferences.html:419
 msgid "URL to restore your preferences in another browser"
-msgstr ""
+msgstr "URL-osoite asetusten palauttamiseksi toisessa selaimessa"
 
 #: searx/templates/simple/preferences.html:423
 msgid ""
 "Specifying custom settings in the preferences URL can be used to sync "
 "preferences across devices."
 msgstr ""
+"Määrittämällä mukautettuja asetuksia asetusten URL-osoitteessa voidaan "
+"käyttää synkronoimiseen asetuksia eri laitteissa."
 
 #: searx/templates/simple/preferences.html:428
 msgid ""
@@ -892,67 +948,63 @@ msgstr "Pisteet"
 msgid "Result count"
 msgstr "Tulosten määrä"
 
-#: searx/templates/simple/stats.html:38
-msgid "Scores per result"
-msgstr "Pisteet per tulos"
-
-#: searx/templates/simple/stats.html:62
+#: searx/templates/simple/stats.html:59
 msgid "Total"
 msgstr "Yhteensä"
 
-#: searx/templates/simple/stats.html:63
+#: searx/templates/simple/stats.html:60
 msgid "HTTP"
 msgstr "HTTP"
 
-#: searx/templates/simple/stats.html:64
+#: searx/templates/simple/stats.html:61
 msgid "Processing"
 msgstr "Käsitellään"
 
-#: searx/templates/simple/stats.html:102
+#: searx/templates/simple/stats.html:99
 msgid "Warnings"
 msgstr "Varoitukset"
 
-#: searx/templates/simple/stats.html:102
+#: searx/templates/simple/stats.html:99
 msgid "Errors and exceptions"
 msgstr "Virheet ja poikkeukset"
 
-#: searx/templates/simple/stats.html:108
+#: searx/templates/simple/stats.html:105
 msgid "Exception"
 msgstr "Poikkeus"
 
-#: searx/templates/simple/stats.html:110
+#: searx/templates/simple/stats.html:107
 msgid "Message"
 msgstr "Viesti"
 
-#: searx/templates/simple/stats.html:112
+#: searx/templates/simple/stats.html:109
 msgid "Percentage"
 msgstr "Prosentti"
 
-#: searx/templates/simple/stats.html:114
+#: searx/templates/simple/stats.html:111
 msgid "Parameter"
 msgstr "Parametri"
 
-#: searx/templates/simple/stats.html:122
+#: searx/templates/simple/stats.html:119
 msgid "Filename"
 msgstr "Tiedoston nimi"
 
-#: searx/templates/simple/stats.html:123
+#: searx/templates/simple/stats.html:120
 msgid "Function"
 msgstr "Funktio"
 
-#: searx/templates/simple/stats.html:124
+#: searx/templates/simple/stats.html:121
 msgid "Code"
 msgstr "Koodi"
 
-#: searx/templates/simple/stats.html:131
+#: searx/templates/simple/stats.html:128
 msgid "Checker"
 msgstr "Tarkistaja"
 
-#: searx/templates/simple/stats.html:134
+#: searx/templates/simple/stats.html:131
 msgid "Failed test"
 msgstr "Epäonnistunut testi"
 
-#: searx/templates/simple/stats.html:135
+#: searx/templates/simple/stats.html:132
 msgid "Comment(s)"
 msgstr "Kommentit"
 
@@ -1340,4 +1392,7 @@ msgstr "piilota video"
 
 #~ msgid "preferences"
 #~ msgstr "asetukset"
+
+#~ msgid "Scores per result"
+#~ msgstr "Pisteet per tulos"
 

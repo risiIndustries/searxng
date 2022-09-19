@@ -270,7 +270,7 @@
       <p class="value">
         <select name='image_proxy' aria-labelledby="pref_image_proxy">
           <option value="1" {% if image_proxy %}selected="selected"{% endif %}>{{ _('Enabled') }}</option>
-          <option value="" {% if not image_proxy %}selected="selected"{% endif %}>{{ _('Disabled') }}</option>
+          <option value="0" {% if not image_proxy %}selected="selected"{% endif %}>{{ _('Disabled') }}</option>
         </select>
       </p>
       <div class="description">{{ _('Proxying image results through SearXNG') }}</div>
@@ -282,7 +282,7 @@
       <p class="value">
         <select name='query_in_title' aria-labelledby="pref_query_in_title">
           <option value="1" {% if query_in_title %}selected="selected"{% endif %}>{{ _('Enabled') }}</option>
-          <option value="" {% if not query_in_title %}selected="selected"{% endif %}>{{ _('Disabled') }}</option>
+          <option value="0" {% if not query_in_title %}selected="selected"{% endif %}>{{ _('Disabled') }}</option>
         </select>
       </p>
       <div class="description">{{ _("When enabled, the result page's title contains your query. Your browser can record this title") }}</div>
@@ -310,9 +310,9 @@
         <th>{{ _("Supports selected language") }}</th>{{- "" -}}
         <th>{{ _("SafeSearch") }}</th>{{- "" -}}
         <th>{{ _("Time range") }}</th>{{- "" -}}
-        <th>{{ _("Response time") }}</th>{{- "" -}}
+        {%- if enable_metrics %}<th>{{ _("Response time") }}</th>{% endif -%}
         <th>{{ _("Max time") }}</th>{{- "" -}}
-        <th>{{ _("Reliability") }}</th>{{- "" -}}
+        {%- if enable_metrics %}<th>{{ _("Reliability") }}</th>{% endif -%}
       </tr>
       {% for group, engines in engines_by_category[categ] | group_engines_in_tab %}
       {% if loop.length > 1 %}
@@ -336,9 +336,9 @@
         <td>{{ checkbox(None, supports[search_engine.name]['supports_selected_language'], true) }}</td>{{- "" -}}
         <td>{{ checkbox(None, supports[search_engine.name]['safesearch'], true) }}</td>{{- "" -}}
         <td>{{ checkbox(None, supports[search_engine.name]['time_range_support'], true) }}</td>{{- "" -}}
-        {{- engine_time(search_engine.name) -}}
+        {%- if enable_metrics %}{{- engine_time(search_engine.name) -}}{% endif -%}
         <td class="{{ 'danger' if stats[search_engine.name]['warn_timeout'] else '' }}">{{ search_engine.timeout }}</td>{{- "" -}}
-        {{ engine_reliability(search_engine.name) -}}
+        {%- if enable_metrics %}{{ engine_reliability(search_engine.name) -}}{% endif -%}
       </tr>
       {% endif %}
       {% endfor %}

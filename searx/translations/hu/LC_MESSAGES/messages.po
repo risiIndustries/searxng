@@ -9,13 +9,14 @@
 # Noémi Ványi <sitbackandwait@gmail.com>, 2016-2017
 # Kuka Manó <dumpster@perjel.hu>, 2022.
 # Markus Heiser <markus.heiser@darmarit.de>, 2022.
+# Lakatos Tamás <tomimost@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version:  searx\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-07-08 18:28+0000\n"
-"PO-Revision-Date: 2022-07-06 00:21+0000\n"
-"Last-Translator: Markus Heiser <markus.heiser@darmarit.de>\n"
+"POT-Creation-Date: 2022-09-04 09:33+0000\n"
+"PO-Revision-Date: 2022-08-05 07:18+0000\n"
+"Last-Translator: Lakatos Tamás <tomimost@gmail.com>\n"
 "Language: hu\n"
 "Language-Team: Hungarian "
 "<https://weblate.bubu1.eu/projects/searxng/searxng/hu/>\n"
@@ -68,7 +69,7 @@ msgstr "videók"
 #. CATEGORY_NAMES['IT']
 #: searx/searxng.msg
 msgid "it"
-msgstr "az"
+msgstr "IT"
 
 #. CATEGORY_NAMES['NEWS']
 #: searx/searxng.msg
@@ -197,7 +198,7 @@ msgstr "szerver API hiba"
 msgid "No item found"
 msgstr "Nincs találat"
 
-#: searx/engines/qwant.py:212
+#: searx/engines/qwant.py:217
 #: searx/templates/simple/result_templates/images.html:20 searx/webapp.py:365
 msgid "Source"
 msgstr "Forrás"
@@ -206,27 +207,27 @@ msgstr "Forrás"
 msgid "Error loading the next page"
 msgstr "Hiba a következő oldal betöltése során"
 
-#: searx/webapp.py:516 searx/webapp.py:960
+#: searx/webapp.py:518 searx/webapp.py:962
 msgid "Invalid settings, please edit your preferences"
 msgstr "Érvénytelen beállítások, kérlek módosítsd őket"
 
-#: searx/webapp.py:532
+#: searx/webapp.py:534
 msgid "Invalid settings"
 msgstr "Érvénytelen beállítások"
 
-#: searx/webapp.py:609 searx/webapp.py:685
+#: searx/webapp.py:611 searx/webapp.py:687
 msgid "search error"
 msgstr "keresési hiba"
 
-#: searx/webapp.py:731
+#: searx/webapp.py:733
 msgid "{minutes} minute(s) ago"
 msgstr "{minutes} perce"
 
-#: searx/webapp.py:733
+#: searx/webapp.py:735
 msgid "{hours} hour(s), {minutes} minute(s) ago"
 msgstr "{hours} óra, {minutes} perce"
 
-#: searx/webapp.py:859
+#: searx/webapp.py:861
 msgid "Suspended"
 msgstr "Felfüggesztve"
 
@@ -262,9 +263,31 @@ msgstr "Ezt a bejegyzést törölte:"
 msgid "No abstract is available for this publication."
 msgstr "Nem elérhető absztrakt a publikációhoz."
 
-#: searx/engines/qwant.py:214
+#: searx/engines/qwant.py:219
 msgid "Channel"
 msgstr "Csatorna"
+
+#: searx/engines/tineye.py:40
+msgid ""
+"Could not read that image url. This may be due to an unsupported file "
+"format. TinEye only supports images that are JPEG, PNG, GIF, BMP, TIFF or"
+" WebP."
+msgstr ""
+"Ennek a képnek az url-je nem olvasható. Ennek oka lehet egy nem "
+"támogatott fájl formátum. A TinEye által támogatott formátumok: JPEG, "
+"PNG, GIF, BMP, TIFF or WebP."
+
+#: searx/engines/tineye.py:46
+msgid ""
+"The image is too simple to find matches. TinEye requires a basic level of"
+" visual detail to successfully identify matches."
+msgstr ""
+"A kép túl egyszerű a kereséshez. A TinEye-nek szüksége van egy minimális "
+"vizuális részletességre a sikeres kereséshez."
+
+#: searx/engines/tineye.py:52
+msgid "The image could not be downloaded."
+msgstr "A kép nem tölthető le."
 
 #: searx/plugins/hash_plugin.py:24
 msgid "Converts strings to different hash digests."
@@ -319,6 +342,35 @@ msgid ""
 msgstr ""
 "Saját IP cím, user agent megjelenítése az \"ip\", \"user agent\" szavakra"
 " keresve."
+
+#: searx/plugins/tor_check.py:25
+msgid "Tor check plugin"
+msgstr "Tor ellenőrző kiegészítő"
+
+#: searx/plugins/tor_check.py:28
+msgid ""
+"This plugin checks if the address of the request is a TOR exit node, and "
+"informs the user if it is, like check.torproject.org but from searxng."
+msgstr ""
+"Ez a kiegeszítő ellenőrzi, hogy a kérés címe az egy TOR kilépő nodé-e, és"
+" téjákoztatja erről a felhasználót. Olyan, mint a check.torproject.org, "
+"de a searxng-től."
+
+#: searx/plugins/tor_check.py:62
+msgid ""
+"The TOR exit node list (https://check.torproject.org/exit-addresses) is "
+"unreachable."
+msgstr ""
+"A TOR kilébő node listája (https://check.torproject.org/exit-addresses) "
+"elérhetetlen."
+
+#: searx/plugins/tor_check.py:78
+msgid "You are using TOR. Your IP address seems to be: {ip_address}."
+msgstr "TOR-t használsz. Az IP címed ennek tűnik: {ip_address}."
+
+#: searx/plugins/tor_check.py:84
+msgid "You are not using TOR. Your IP address seems to be: {ip_address}."
+msgstr "Nem használsz TOR-t. Az IP címed ennek tűnik: {ip_address}."
 
 #: searx/plugins/tracker_url_remover.py:29
 msgid "Tracker URL remover"
@@ -423,19 +475,19 @@ msgstr "proxy nézet"
 
 #: searx/templates/simple/new_issue.html:64
 msgid "Start submiting a new issue on GitHub"
-msgstr ""
+msgstr "Probléma bejelentése GitHubon"
 
 #: searx/templates/simple/new_issue.html:66
 msgid "Please check for existing bugs about this engine on GitHub"
-msgstr ""
+msgstr "Kérlek ellenőrizd a GitHubon bejelentett hibákat"
 
 #: searx/templates/simple/new_issue.html:69
 msgid "I confirm there is no existing bug about the issue I encounter"
-msgstr ""
+msgstr "Megerősítem, hogy nincs meglévő bejelentés a problémámról"
 
 #: searx/templates/simple/new_issue.html:71
 msgid "If this is a public instance, please specify the URL in the bug report"
-msgstr ""
+msgstr "Ha ez egy nyilvános példány, kérlek add meg az URL-t a hiba bejelentésben"
 
 #: searx/templates/simple/new_issue.html:72
 msgid "Submit a new issue on Github including the above information"
@@ -455,17 +507,17 @@ msgid "View error logs and submit a bug report"
 msgstr "A hibanapló megtekintése és egy hiba bejelentése"
 
 #: searx/templates/simple/preferences.html:53
-#: searx/templates/simple/stats.html:67
+#: searx/templates/simple/stats.html:64
 msgid "Median"
 msgstr "Medián"
 
 #: searx/templates/simple/preferences.html:54
-#: searx/templates/simple/stats.html:73
+#: searx/templates/simple/stats.html:70
 msgid "P80"
 msgstr "P80"
 
 #: searx/templates/simple/preferences.html:55
-#: searx/templates/simple/stats.html:79
+#: searx/templates/simple/stats.html:76
 msgid "P95"
 msgstr "P95"
 
@@ -898,67 +950,63 @@ msgstr "Pontszámok"
 msgid "Result count"
 msgstr "Találatok száma"
 
-#: searx/templates/simple/stats.html:38
-msgid "Scores per result"
-msgstr "Pontszámok találatonként"
-
-#: searx/templates/simple/stats.html:62
+#: searx/templates/simple/stats.html:59
 msgid "Total"
 msgstr "Összesen"
 
-#: searx/templates/simple/stats.html:63
+#: searx/templates/simple/stats.html:60
 msgid "HTTP"
 msgstr "HTTP"
 
-#: searx/templates/simple/stats.html:64
+#: searx/templates/simple/stats.html:61
 msgid "Processing"
 msgstr "Feldolgozás"
 
-#: searx/templates/simple/stats.html:102
+#: searx/templates/simple/stats.html:99
 msgid "Warnings"
 msgstr "Figyelmeztetések"
 
-#: searx/templates/simple/stats.html:102
+#: searx/templates/simple/stats.html:99
 msgid "Errors and exceptions"
 msgstr "Hibák és kivételek"
 
-#: searx/templates/simple/stats.html:108
+#: searx/templates/simple/stats.html:105
 msgid "Exception"
 msgstr "Kivétel"
 
-#: searx/templates/simple/stats.html:110
+#: searx/templates/simple/stats.html:107
 msgid "Message"
 msgstr "Üzenet"
 
-#: searx/templates/simple/stats.html:112
+#: searx/templates/simple/stats.html:109
 msgid "Percentage"
 msgstr "Százalék"
 
-#: searx/templates/simple/stats.html:114
+#: searx/templates/simple/stats.html:111
 msgid "Parameter"
 msgstr "Paraméter"
 
-#: searx/templates/simple/stats.html:122
+#: searx/templates/simple/stats.html:119
 msgid "Filename"
 msgstr "Fájlnév"
 
-#: searx/templates/simple/stats.html:123
+#: searx/templates/simple/stats.html:120
 msgid "Function"
 msgstr "Funkció"
 
-#: searx/templates/simple/stats.html:124
+#: searx/templates/simple/stats.html:121
 msgid "Code"
 msgstr "Kód"
 
-#: searx/templates/simple/stats.html:131
+#: searx/templates/simple/stats.html:128
 msgid "Checker"
 msgstr "Ellenőrző"
 
-#: searx/templates/simple/stats.html:134
+#: searx/templates/simple/stats.html:131
 msgid "Failed test"
 msgstr "Elbukott teszt"
 
-#: searx/templates/simple/stats.html:135
+#: searx/templates/simple/stats.html:132
 msgid "Comment(s)"
 msgstr "Komment(ek)"
 
@@ -1342,4 +1390,7 @@ msgstr "videó elrejtése"
 
 #~ msgid "preferences"
 #~ msgstr "beállítások"
+
+#~ msgid "Scores per result"
+#~ msgstr "Pontszámok találatonként"
 

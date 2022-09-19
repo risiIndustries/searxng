@@ -207,9 +207,13 @@ Global Settings
 ``secret_key`` : ``$SEARXNG_SECRET``
   Used for cryptography purpose.
 
+.. _limiter:
+
 ``limiter`` :
   Rate limit the number of request on the instance, block some bots.  The
   :ref:`limiter plugin` requires a :ref:`settings redis` database.
+
+.. _image_proxy:
 
 ``image_proxy`` :
   Allow your instance of SearXNG of being able to proxy images.  Uses memory space.
@@ -225,16 +229,26 @@ Global Settings
 ``ui:``
 -------
 
+.. _cache busting:
+   https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#caching_static_assets_with_cache_busting
+
 .. code:: yaml
 
    ui:
+     static_use_hash: false
      default_locale: ""
      query_in_title: false
      infinite_scroll: false
      center_alignment: false
+     cache_url: https://web.archive.org/web/
      default_theme: simple
      theme_args:
        simple_style: auto
+
+.. _static_use_hash:
+
+``static_use_hash`` :
+  Enables `cache busting`_ of static files.
 
 ``default_locale`` :
   SearXNG interface language.  If blank, the locale is detected by using the
@@ -253,6 +267,15 @@ Global Settings
   When enabled, the results are centered instead of being in the left (or RTL)
   side of the screen.  This setting only affects the *desktop layout*
   (:origin:`min-width: @tablet <searx/static/themes/simple/src/less/definitions.less>`)
+
+.. cache_url:
+
+``cache_url`` : ``https://web.archive.org/web/``
+  URL prefix of the internet archive or cache, don't forgett trailing slash (if
+  needed).  The default is https://web.archive.org/web/ alternatives are:
+
+  - https://webcache.googleusercontent.com/search?q=cache:
+  - https://archive.today/
 
 ``default_theme`` :
   Name of the theme you want to use by default on your SearXNG instance.
@@ -427,6 +450,7 @@ engine is shown.  Most of the options have a default value or even are optional.
      engine: example
      shortcut: demo
      base_url: 'https://{language}.example.com/'
+     send_accept_language_header: false
      categories: general
      timeout: 3.0
      api_key: 'apikey'
@@ -474,6 +498,13 @@ engine is shown.  Most of the options have a default value or even are optional.
   Part of the URL that should be stable across every request.  Can be useful to
   use multiple sites using only one engine, or updating the site URL without
   touching at the code.
+
+``send_accept_language_header`` :
+  Several engines that support languages (or regions) deal with the HTTP header
+  ``Accept-Language`` to build a response that fits to the locale.  When this
+  option is activated, the language (locale) that is selected by the user is used
+  to build and send a ``Accept-Language`` header in the request to the origin
+  search engine.
 
 ``categories`` : optional
   Define in which categories this engine will be active.  Most of the time, it is

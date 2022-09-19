@@ -8,20 +8,19 @@
 # Hachiki <ninonakano408@gmail.com>, 2022.
 msgid ""
 msgstr ""
-"Project-Id-Version: searx\n"
+"Project-Id-Version:  searx\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-07-08 18:28+0000\n"
-"PO-Revision-Date: 2022-07-15 07:19+0000\n"
-"Last-Translator: Hachiki <ninonakano408@gmail.com>\n"
-"Language-Team: Filipino <https://weblate.bubu1.eu/projects/searxng/searxng/"
-"fil/>\n"
+"POT-Creation-Date: 2022-09-04 09:33+0000\n"
+"PO-Revision-Date: 2022-08-22 12:54+0000\n"
+"Last-Translator: Markus Heiser <markus.heiser@darmarit.de>\n"
 "Language: fil\n"
+"Language-Team: Filipino "
+"<https://weblate.bubu1.eu/projects/searxng/searxng/fil/>\n"
+"Plural-Forms: nplurals=2; plural=(n == 1 || n==2 || n==3) || (n % 10 != 4"
+" || n % 10 != 6 || n % 10 != 9);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n == 1 || n==2 || n==3) || (n % 10 != 4 || "
-"n % 10 != 6 || n % 10 != 9);\n"
-"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #. CONSTANT_NAMES['DEFAULT_GROUP_NAME']
@@ -196,7 +195,7 @@ msgstr "pagkakamali sa server API"
 msgid "No item found"
 msgstr "Walang nakita na aytem"
 
-#: searx/engines/qwant.py:212
+#: searx/engines/qwant.py:217
 #: searx/templates/simple/result_templates/images.html:20 searx/webapp.py:365
 msgid "Source"
 msgstr "Pinagmulan"
@@ -205,27 +204,27 @@ msgstr "Pinagmulan"
 msgid "Error loading the next page"
 msgstr "Nag error ang pagload ng kabilang pahina"
 
-#: searx/webapp.py:516 searx/webapp.py:960
+#: searx/webapp.py:518 searx/webapp.py:962
 msgid "Invalid settings, please edit your preferences"
 msgstr "Maling settings, paki ayos ang preferences"
 
-#: searx/webapp.py:532
+#: searx/webapp.py:534
 msgid "Invalid settings"
 msgstr "Maling settings"
 
-#: searx/webapp.py:609 searx/webapp.py:685
+#: searx/webapp.py:611 searx/webapp.py:687
 msgid "search error"
 msgstr "nagkaproblema sa paghahanap"
 
-#: searx/webapp.py:731
+#: searx/webapp.py:733
 msgid "{minutes} minute(s) ago"
 msgstr "{minutes} na minuto ang nakalipas"
 
-#: searx/webapp.py:733
+#: searx/webapp.py:735
 msgid "{hours} hour(s), {minutes} minute(s) ago"
 msgstr "{hours} oras at {minutes} na minto ang nakalipas"
 
-#: searx/webapp.py:859
+#: searx/webapp.py:861
 msgid "Suspended"
 msgstr "Suspendido"
 
@@ -261,9 +260,26 @@ msgstr "Ang tala na ito ay ipinagpaliban ng"
 msgid "No abstract is available for this publication."
 msgstr "Walang nakita na abstract para sa pahahayag na ito."
 
-#: searx/engines/qwant.py:214
+#: searx/engines/qwant.py:219
 msgid "Channel"
 msgstr "Tyanel"
+
+#: searx/engines/tineye.py:40
+msgid ""
+"Could not read that image url. This may be due to an unsupported file "
+"format. TinEye only supports images that are JPEG, PNG, GIF, BMP, TIFF or"
+" WebP."
+msgstr ""
+
+#: searx/engines/tineye.py:46
+msgid ""
+"The image is too simple to find matches. TinEye requires a basic level of"
+" visual detail to successfully identify matches."
+msgstr ""
+
+#: searx/engines/tineye.py:52
+msgid "The image could not be downloaded."
+msgstr "Ang image na ito ay hindi maaaring i-download."
 
 #: searx/plugins/hash_plugin.py:24
 msgid "Converts strings to different hash digests."
@@ -316,6 +332,35 @@ msgid ""
 msgstr ""
 "Ipapakita ang iyong IP kapag ang tanong ay \"ip\" at ang iyong user agent"
 " kapag ang sa tanong ay naglalaman ng \"user agent\"."
+
+#: searx/plugins/tor_check.py:25
+msgid "Tor check plugin"
+msgstr "Tor check plugin"
+
+#: searx/plugins/tor_check.py:28
+msgid ""
+"This plugin checks if the address of the request is a TOR exit node, and "
+"informs the user if it is, like check.torproject.org but from searxng."
+msgstr ""
+"Ang plugin na ito ay tsini-check kung ang address ng request ay isang TOR"
+" exit node, at i-iinform ang user kung oo, gaya ng check.torproject.org "
+"ngunit searxng."
+
+#: searx/plugins/tor_check.py:62
+msgid ""
+"The TOR exit node list (https://check.torproject.org/exit-addresses) is "
+"unreachable."
+msgstr ""
+"Ang TOR exit node list (https://check.torproject.org/exit-addresses) ay "
+"unreachable."
+
+#: searx/plugins/tor_check.py:78
+msgid "You are using TOR. Your IP address seems to be: {ip_address}."
+msgstr "Ikaw ay gumagamit ng TOR. Ang i'yong IP address ay: {ip_address}."
+
+#: searx/plugins/tor_check.py:84
+msgid "You are not using TOR. Your IP address seems to be: {ip_address}."
+msgstr "Ikaw ay hindi gumagamit ng TOR. Ang i'yong IP address ay: {ip_address}."
 
 #: searx/plugins/tracker_url_remover.py:29
 msgid "Tracker URL remover"
@@ -433,12 +478,14 @@ msgstr "Kinukumpirma kong walang umiiral na bug tungkol sa isyung nakatagpo ko"
 #: searx/templates/simple/new_issue.html:71
 msgid "If this is a public instance, please specify the URL in the bug report"
 msgstr ""
-"Kung ito ay isang pampublikong instance, mangyaring tukuyin ang URL sa ulat "
-"ng bug"
+"Kung ito ay isang pampublikong instance, mangyaring tukuyin ang URL sa "
+"ulat ng bug"
 
 #: searx/templates/simple/new_issue.html:72
 msgid "Submit a new issue on Github including the above information"
-msgstr "Mag sumite ng bagong isyu sa github kasama ng bagong impormasyon sa taas."
+msgstr ""
+"Mga-submit ng isang bagong issue sa GitHub kasama ng impormasyong nasa "
+"itaas"
 
 #: searx/templates/simple/preferences.html:29
 msgid "No HTTPS"
@@ -452,17 +499,17 @@ msgid "View error logs and submit a bug report"
 msgstr "Tignan ang error logs at magsumite ng bug report"
 
 #: searx/templates/simple/preferences.html:53
-#: searx/templates/simple/stats.html:67
+#: searx/templates/simple/stats.html:64
 msgid "Median"
 msgstr "Gitna"
 
 #: searx/templates/simple/preferences.html:54
-#: searx/templates/simple/stats.html:73
+#: searx/templates/simple/stats.html:70
 msgid "P80"
 msgstr "P80"
 
 #: searx/templates/simple/preferences.html:55
-#: searx/templates/simple/stats.html:79
+#: searx/templates/simple/stats.html:76
 msgid "P95"
 msgstr "P95"
 
@@ -679,8 +726,9 @@ msgid ""
 "This tab does not show up for search results, but you can search the "
 "engines listed here via bangs."
 msgstr ""
-"Ang tab na ito ay hindi lumalabas para sa mga resulta ng paghahanap, ngunit "
-"maaari kang maghanap sa mga engine na nakalista dito sa pamamagitan ng bangs."
+"Ang tab na ito ay hindi lumalabas para sa mga resulta ng paghahanap, "
+"ngunit maaari kang maghanap sa mga engine na nakalista dito sa "
+"pamamagitan ng bangs."
 
 #: searx/templates/simple/preferences.html:307
 #: searx/templates/simple/preferences.html:358
@@ -756,6 +804,8 @@ msgid ""
 "This is the list of cookies and their values SearXNG is storing on your "
 "computer."
 msgstr ""
+"Ito ang listahan ng mga cookies at values na ini-store ng SearXNG sa "
+"i'yong computer."
 
 #: searx/templates/simple/preferences.html:396
 msgid "With that list, you can assess SearXNG transparency."
@@ -767,7 +817,7 @@ msgstr "Pangalan ng cookie"
 
 #: searx/templates/simple/preferences.html:402
 msgid "Value"
-msgstr ""
+msgstr "Nilalaman"
 
 #: searx/templates/simple/preferences.html:414
 msgid "Search URL of the currently saved preferences"
@@ -896,67 +946,63 @@ msgstr "Iskor"
 msgid "Result count"
 msgstr ""
 
-#: searx/templates/simple/stats.html:38
-msgid "Scores per result"
-msgstr "Iskor ng bawat resulta"
-
-#: searx/templates/simple/stats.html:62
+#: searx/templates/simple/stats.html:59
 msgid "Total"
 msgstr ""
 
-#: searx/templates/simple/stats.html:63
+#: searx/templates/simple/stats.html:60
 msgid "HTTP"
 msgstr ""
 
-#: searx/templates/simple/stats.html:64
+#: searx/templates/simple/stats.html:61
 msgid "Processing"
 msgstr ""
 
-#: searx/templates/simple/stats.html:102
+#: searx/templates/simple/stats.html:99
 msgid "Warnings"
 msgstr ""
 
-#: searx/templates/simple/stats.html:102
+#: searx/templates/simple/stats.html:99
 msgid "Errors and exceptions"
-msgstr ""
+msgstr "Mga error at exceptions"
 
-#: searx/templates/simple/stats.html:108
+#: searx/templates/simple/stats.html:105
 msgid "Exception"
 msgstr ""
 
-#: searx/templates/simple/stats.html:110
+#: searx/templates/simple/stats.html:107
 msgid "Message"
 msgstr ""
 
-#: searx/templates/simple/stats.html:112
+#: searx/templates/simple/stats.html:109
 msgid "Percentage"
 msgstr ""
 
-#: searx/templates/simple/stats.html:114
+#: searx/templates/simple/stats.html:111
 msgid "Parameter"
 msgstr ""
 
-#: searx/templates/simple/stats.html:122
+#: searx/templates/simple/stats.html:119
 msgid "Filename"
 msgstr ""
 
-#: searx/templates/simple/stats.html:123
+#: searx/templates/simple/stats.html:120
 msgid "Function"
 msgstr ""
 
-#: searx/templates/simple/stats.html:124
+#: searx/templates/simple/stats.html:121
 msgid "Code"
 msgstr ""
 
-#: searx/templates/simple/stats.html:131
+#: searx/templates/simple/stats.html:128
 msgid "Checker"
 msgstr ""
 
-#: searx/templates/simple/stats.html:134
+#: searx/templates/simple/stats.html:131
 msgid "Failed test"
 msgstr ""
 
-#: searx/templates/simple/stats.html:135
+#: searx/templates/simple/stats.html:132
 msgid "Comment(s)"
 msgstr ""
 
@@ -986,7 +1032,7 @@ msgstr "Impormasyon!"
 
 #: searx/templates/simple/messages/no_cookies.html:4
 msgid "currently, there are no cookies defined."
-msgstr "wala pa sa ngayon na cookies na naka define."
+msgstr "wala pang cookies na naka-define sa ngayon."
 
 #: searx/templates/simple/messages/no_results.html:6
 msgid "Engines cannot retrieve results."
@@ -994,7 +1040,7 @@ msgstr "Hindi makuha ng engines ang mga resulta."
 
 #: searx/templates/simple/messages/no_results.html:15
 msgid "Please, try again later or find another SearXNG instance."
-msgstr ""
+msgstr "Pakiusap, subukan muli mamaya o humanap ng ibang SearXNG instance."
 
 #: searx/templates/simple/messages/no_results.html:20
 msgid "Sorry!"
@@ -1019,7 +1065,7 @@ msgstr "itago ang media"
 #: searx/templates/simple/result_templates/default.html:14
 #: searx/templates/simple/result_templates/videos.html:14
 msgid "This site did not provide any description."
-msgstr "Hindi bumigay ng deskripsyon ang site"
+msgstr "Ang site na ito ay hindi nagbigay ng deskripsyon."
 
 #: searx/templates/simple/result_templates/images.html:19
 msgid "Format"
@@ -1031,7 +1077,7 @@ msgstr ""
 
 #: searx/templates/simple/result_templates/images.html:22
 msgid "View source"
-msgstr "Tignan ang pinagkuhanan"
+msgstr "Tignan ang source"
 
 #: searx/templates/simple/result_templates/map.html:12
 msgid "address"
@@ -1091,11 +1137,11 @@ msgstr "Bilang ng mga files"
 
 #: searx/templates/simple/result_templates/videos.html:6
 msgid "show video"
-msgstr "ipakita ang bidyo"
+msgstr "ipakita ang video"
 
 #: searx/templates/simple/result_templates/videos.html:6
 msgid "hide video"
-msgstr "itago ang bidyo"
+msgstr "itago ang video"
 
 #~ msgid "Engine time (sec)"
 #~ msgstr "Oras ng engine (segundo)"
@@ -1346,3 +1392,7 @@ msgstr "itago ang bidyo"
 
 #~ msgid "preferences"
 #~ msgstr ""
+
+#~ msgid "Scores per result"
+#~ msgstr "Iskor ng bawat resulta"
+

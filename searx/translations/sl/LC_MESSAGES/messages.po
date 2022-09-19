@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  searx\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-07-08 18:28+0000\n"
-"PO-Revision-Date: 2022-07-06 00:21+0000\n"
+"POT-Creation-Date: 2022-09-04 09:33+0000\n"
+"PO-Revision-Date: 2022-08-19 07:18+0000\n"
 "Last-Translator: Markus Heiser <markus.heiser@darmarit.de>\n"
 "Language: sl\n"
 "Language-Team: Slovenian "
@@ -30,7 +30,7 @@ msgstr "Drugi"
 #. CONSTANT_NAMES['OTHER_CATEGORY']
 #: searx/searxng.msg
 msgid "other"
-msgstr ""
+msgstr "Ostale kategorije"
 
 #. CATEGORY_NAMES['FILES']
 #: searx/searxng.msg
@@ -120,12 +120,12 @@ msgstr "repozitoriji"
 #. CATEGORY_GROUPS['SOFTWARE_WIKIS']
 #: searx/searxng.msg
 msgid "software wikis"
-msgstr ""
+msgstr "Dokumentacija programske opreme"
 
 #. CATEGORY_GROUPS['WEB']
 #: searx/searxng.msg
 msgid "web"
-msgstr ""
+msgstr "splet"
 
 #. STYLE_NAMES['AUTO']
 #: searx/searxng.msg
@@ -194,7 +194,7 @@ msgstr "napaka API strežnika"
 msgid "No item found"
 msgstr "Ni zadetkov"
 
-#: searx/engines/qwant.py:212
+#: searx/engines/qwant.py:217
 #: searx/templates/simple/result_templates/images.html:20 searx/webapp.py:365
 msgid "Source"
 msgstr "Vir"
@@ -203,27 +203,27 @@ msgstr "Vir"
 msgid "Error loading the next page"
 msgstr "Napaka pri nalaganju naslednje strani"
 
-#: searx/webapp.py:516 searx/webapp.py:960
+#: searx/webapp.py:518 searx/webapp.py:962
 msgid "Invalid settings, please edit your preferences"
 msgstr "Neveljavne nastavitve. Prosimo, preverite vašo konfiguracijo"
 
-#: searx/webapp.py:532
+#: searx/webapp.py:534
 msgid "Invalid settings"
 msgstr "Neveljavne nastavitve"
 
-#: searx/webapp.py:609 searx/webapp.py:685
+#: searx/webapp.py:611 searx/webapp.py:687
 msgid "search error"
 msgstr "napaka pri iskanju"
 
-#: searx/webapp.py:731
+#: searx/webapp.py:733
 msgid "{minutes} minute(s) ago"
 msgstr "{minutes} minut nazaj"
 
-#: searx/webapp.py:733
+#: searx/webapp.py:735
 msgid "{hours} hour(s), {minutes} minute(s) ago"
 msgstr "pred {hours} urami in {minutes} minut"
 
-#: searx/webapp.py:859
+#: searx/webapp.py:861
 msgid "Suspended"
 msgstr "Prekinjeno"
 
@@ -249,7 +249,7 @@ msgstr "Pridobite navodila"
 
 #: searx/engines/pdbe.py:96
 msgid "{title} (OBSOLETE)"
-msgstr ""
+msgstr "{title} (neveljaven)"
 
 #: searx/engines/pdbe.py:103
 msgid "This entry has been superseded by"
@@ -257,31 +257,55 @@ msgstr "Ta vnos je bil presezen"
 
 #: searx/engines/pubmed.py:78
 msgid "No abstract is available for this publication."
-msgstr ""
+msgstr "Povzetek za to publikacijo ni na voljo."
 
-#: searx/engines/qwant.py:214
+#: searx/engines/qwant.py:219
 msgid "Channel"
+msgstr "Kanal"
+
+#: searx/engines/tineye.py:40
+msgid ""
+"Could not read that image url. This may be due to an unsupported file "
+"format. TinEye only supports images that are JPEG, PNG, GIF, BMP, TIFF or"
+" WebP."
 msgstr ""
+"Ne morem prebrati slike hiperpovezave. Razlog je lahko zaradi nepodprtega"
+" formata datoteke. TinEye podpira samo slikovne formate JPEG, PNG, GIF, "
+"BMP, TIFF ali WebP."
+
+#: searx/engines/tineye.py:46
+msgid ""
+"The image is too simple to find matches. TinEye requires a basic level of"
+" visual detail to successfully identify matches."
+msgstr ""
+"Slika je preveč preprosta, da bi lahko našel zadetke. TinEye potrebuje "
+"osnovni nivo vizualnih detajlov za identifikacijo zadetkov."
+
+#: searx/engines/tineye.py:52
+msgid "The image could not be downloaded."
+msgstr "Slike ni bilo mogoče prevesti."
 
 #: searx/plugins/hash_plugin.py:24
 msgid "Converts strings to different hash digests."
-msgstr ""
+msgstr "Pretvori besede v drugo hash vrednost."
 
 #: searx/plugins/hash_plugin.py:52
 msgid "hash digest"
-msgstr ""
+msgstr "Hash vrednost"
 
 #: searx/plugins/hostname_replace.py:9
 msgid "Hostname replace"
-msgstr ""
+msgstr "Preimenuj strežniško ime"
 
 #: searx/plugins/hostname_replace.py:10
 msgid "Rewrite result hostnames or remove results based on the hostname"
 msgstr ""
+"Prepiši rezultate strežniških imen ali odstrani rezultate na bazi "
+"strežniških imen"
 
 #: searx/plugins/oa_doi_rewrite.py:9
 msgid "Open Access DOI rewrite"
-msgstr ""
+msgstr "Prosto dostopni DOI prepis"
 
 #: searx/plugins/oa_doi_rewrite.py:10
 msgid ""
@@ -305,7 +329,7 @@ msgstr ""
 
 #: searx/plugins/self_info.py:20
 msgid "Self Informations"
-msgstr ""
+msgstr "Informacije o sebi"
 
 #: searx/plugins/self_info.py:21
 msgid ""
@@ -314,6 +338,35 @@ msgid ""
 msgstr ""
 "Prikaže IP naslov, če je niz poizvedbe \"ip\", in uporabniški agent, če "
 "je niz \"user agent\"."
+
+#: searx/plugins/tor_check.py:25
+msgid "Tor check plugin"
+msgstr "Preveri Tor vtičnik"
+
+#: searx/plugins/tor_check.py:28
+msgid ""
+"This plugin checks if the address of the request is a TOR exit node, and "
+"informs the user if it is, like check.torproject.org but from searxng."
+msgstr ""
+"Ta vtičnik preveri, če je naslov poizvedbe izhodni prikluček TOR in "
+"informira uporabnika o njem, kot naprimer check.torproject.org ampak "
+"preko searxng-ja."
+
+#: searx/plugins/tor_check.py:62
+msgid ""
+"The TOR exit node list (https://check.torproject.org/exit-addresses) is "
+"unreachable."
+msgstr ""
+"Seznam izhodnih priključkov TOR (https://check.torproject.org/exit-"
+"addresses) je nedosegljiv."
+
+#: searx/plugins/tor_check.py:78
+msgid "You are using TOR. Your IP address seems to be: {ip_address}."
+msgstr "Uporabljaš TOR. Tvoj IP naslov naj bi bil: {ip_address}."
+
+#: searx/plugins/tor_check.py:84
+msgid "You are not using TOR. Your IP address seems to be: {ip_address}."
+msgstr "Ne uporabljaš TOR-a. Tvoj IP naslov naj bi bil: {ip_address}."
 
 #: searx/plugins/tracker_url_remover.py:29
 msgid "Tracker URL remover"
@@ -351,11 +404,11 @@ msgstr "stran za iskanje"
 
 #: searx/templates/simple/base.html:46
 msgid "About"
-msgstr ""
+msgstr "O nas"
 
 #: searx/templates/simple/base.html:50
 msgid "Donate"
-msgstr ""
+msgstr "Doniraj"
 
 #: searx/templates/simple/base.html:54
 #: searx/templates/simple/preferences.html:99
@@ -372,11 +425,11 @@ msgstr "razširljiv metaiskalnik, ki spoštuje vašo zasebnost"
 
 #: searx/templates/simple/base.html:65
 msgid "Source code"
-msgstr ""
+msgstr "Izvorna koda"
 
 #: searx/templates/simple/base.html:66
 msgid "Issue tracker"
-msgstr ""
+msgstr "Sledilnik napak/problemov"
 
 #: searx/templates/simple/base.html:67 searx/templates/simple/stats.html:18
 msgid "Engine stats"
@@ -385,15 +438,15 @@ msgstr "Statistike iskalnika"
 #: searx/templates/simple/base.html:69
 #: searx/templates/simple/messages/no_results.html:15
 msgid "Public instances"
-msgstr ""
+msgstr "Javne instance"
 
 #: searx/templates/simple/base.html:72
 msgid "Privacy policy"
-msgstr ""
+msgstr "Politika zasebnosti"
 
 #: searx/templates/simple/base.html:75
 msgid "Contact instance maintainer"
-msgstr ""
+msgstr "Kontaktiraj vzdrževalca instance"
 
 #: searx/templates/simple/categories.html:24
 msgid "Click on the magnifier to perform search"
@@ -401,12 +454,12 @@ msgstr "Kiknite na lupo za iskanje"
 
 #: searx/templates/simple/macros.html:36
 msgid "Length"
-msgstr ""
+msgstr "Dolžina"
 
 #: searx/templates/simple/macros.html:37
 #: searx/templates/simple/result_templates/images.html:18
 msgid "Author"
-msgstr ""
+msgstr "Avtor"
 
 #: searx/templates/simple/macros.html:45
 msgid "cached"
@@ -418,19 +471,19 @@ msgstr "preko posredniškega strežnika"
 
 #: searx/templates/simple/new_issue.html:64
 msgid "Start submiting a new issue on GitHub"
-msgstr ""
+msgstr "Začni oddajo novega hrošča na GitHub-u"
 
 #: searx/templates/simple/new_issue.html:66
 msgid "Please check for existing bugs about this engine on GitHub"
-msgstr ""
+msgstr "Prosim preveri že aktivne hrošče glede engine-a na GitHub-u"
 
 #: searx/templates/simple/new_issue.html:69
 msgid "I confirm there is no existing bug about the issue I encounter"
-msgstr ""
+msgstr "Potrjujem da o problemu, na katerega sem naletel, ni že obstoječega hrošča"
 
 #: searx/templates/simple/new_issue.html:71
 msgid "If this is a public instance, please specify the URL in the bug report"
-msgstr ""
+msgstr "Če je to javna instanca, prosim specificirajte URL v poročilu o napaki"
 
 #: searx/templates/simple/new_issue.html:72
 msgid "Submit a new issue on Github including the above information"
@@ -448,17 +501,17 @@ msgid "View error logs and submit a bug report"
 msgstr ""
 
 #: searx/templates/simple/preferences.html:53
-#: searx/templates/simple/stats.html:67
+#: searx/templates/simple/stats.html:64
 msgid "Median"
 msgstr ""
 
 #: searx/templates/simple/preferences.html:54
-#: searx/templates/simple/stats.html:73
+#: searx/templates/simple/stats.html:70
 msgid "P80"
 msgstr ""
 
 #: searx/templates/simple/preferences.html:55
-#: searx/templates/simple/stats.html:79
+#: searx/templates/simple/stats.html:76
 msgid "P95"
 msgstr ""
 
@@ -562,7 +615,7 @@ msgstr "Spremeni jezik vmesnika"
 
 #: searx/templates/simple/preferences.html:195
 msgid "Theme"
-msgstr ""
+msgstr "Tema"
 
 #: searx/templates/simple/preferences.html:203
 msgid "Change SearXNG layout"
@@ -883,67 +936,63 @@ msgstr "Točke"
 msgid "Result count"
 msgstr ""
 
-#: searx/templates/simple/stats.html:38
-msgid "Scores per result"
-msgstr "Točke na zadetek"
-
-#: searx/templates/simple/stats.html:62
+#: searx/templates/simple/stats.html:59
 msgid "Total"
 msgstr ""
 
-#: searx/templates/simple/stats.html:63
+#: searx/templates/simple/stats.html:60
 msgid "HTTP"
 msgstr ""
 
-#: searx/templates/simple/stats.html:64
+#: searx/templates/simple/stats.html:61
 msgid "Processing"
 msgstr ""
 
-#: searx/templates/simple/stats.html:102
+#: searx/templates/simple/stats.html:99
 msgid "Warnings"
 msgstr ""
 
-#: searx/templates/simple/stats.html:102
+#: searx/templates/simple/stats.html:99
 msgid "Errors and exceptions"
 msgstr ""
 
-#: searx/templates/simple/stats.html:108
+#: searx/templates/simple/stats.html:105
 msgid "Exception"
 msgstr ""
 
-#: searx/templates/simple/stats.html:110
+#: searx/templates/simple/stats.html:107
 msgid "Message"
 msgstr ""
 
-#: searx/templates/simple/stats.html:112
+#: searx/templates/simple/stats.html:109
 msgid "Percentage"
 msgstr ""
 
-#: searx/templates/simple/stats.html:114
+#: searx/templates/simple/stats.html:111
 msgid "Parameter"
 msgstr ""
 
-#: searx/templates/simple/stats.html:122
+#: searx/templates/simple/stats.html:119
 msgid "Filename"
 msgstr ""
 
-#: searx/templates/simple/stats.html:123
+#: searx/templates/simple/stats.html:120
 msgid "Function"
 msgstr ""
 
-#: searx/templates/simple/stats.html:124
+#: searx/templates/simple/stats.html:121
 msgid "Code"
 msgstr ""
 
-#: searx/templates/simple/stats.html:131
+#: searx/templates/simple/stats.html:128
 msgid "Checker"
 msgstr ""
 
-#: searx/templates/simple/stats.html:134
+#: searx/templates/simple/stats.html:131
 msgid "Failed test"
 msgstr ""
 
-#: searx/templates/simple/stats.html:135
+#: searx/templates/simple/stats.html:132
 msgid "Comment(s)"
 msgstr ""
 
@@ -1014,7 +1063,7 @@ msgstr ""
 
 #: searx/templates/simple/result_templates/images.html:21
 msgid "Engine"
-msgstr ""
+msgstr "Pogon"
 
 #: searx/templates/simple/result_templates/images.html:22
 msgid "View source"
@@ -1330,4 +1379,7 @@ msgstr "skrij video"
 
 #~ msgid "preferences"
 #~ msgstr "nastavitve"
+
+#~ msgid "Scores per result"
+#~ msgstr "Točke na zadetek"
 
