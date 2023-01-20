@@ -1,3 +1,5 @@
+This is the risiIndustries branding fork... You are probably looking for https://github.com/searxng/searxng
+
 .. SPDX-License-Identifier: AGPL-3.0-or-later
 
 ----
